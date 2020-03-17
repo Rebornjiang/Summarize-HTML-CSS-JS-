@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+  
+    #parent {
+      height: 520px;
+      width: 100%;
+      border-spacing: 10px;
+      margin-top: -10px;
+      margin-left: -10px;
+      display: table;
+    }
+
+    #left {
+      width: 100px;
+
+      background-color: lime;
+      display: table-cell;
+    }
+
+    #center {
+      width: 100px;
+     
+      background-color:skyblue;
+      display: table-cell;
+    }
+
+    #right {
+     
+  
+      display: table-cell;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="parent">
+    <div id="left">左列定宽</div>
+    <div id="center">中间定宽</div>
+    <div id="right">右列自适应</div>
+  </div>
+</body>
+
+</html>

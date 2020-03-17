@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7605132",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    }
+  ]
+}

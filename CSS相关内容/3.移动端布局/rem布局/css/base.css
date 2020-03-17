@@ -1,0 +1,50 @@
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+ul ol{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

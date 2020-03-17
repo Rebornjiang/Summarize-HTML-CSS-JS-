@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+    // console.log(Function.prototype)
+    // console.log(Function.__proto__)
+    // console.log(Function.__proto__ === Function.prototype)
+
+    function Person(name,age) {
+      this.name = name;
+      this.age = age;
+
+      this.fn = {
+        saiHi() {
+          console.log('hello every one~')
+        }
+      }
+
+    } 
+
+    stu = new Person('reborn',18) 
+    console.log(stu)
+    console.log(stu.fn.saiHi())
+    var arr = []
+
+    console.log(stu.__proto__.constructor)
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style> 
+    .par {
+      display: flex;
+      height: 500px;
+    }
+    .left {
+      width: 100px;
+    
+      background-color: lime;
+      margin-right: 10px;
+
+    }
+
+    .middle {
+      width: 100px;
+
+      background-color: blanchedalmond;
+      margin-right: 10px;
+      flex:1;
+    }
+    
+    .right  {
+      width: 100px;
+   
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+    <div class="par">
+
+        <div class="left">左侧固定</div>
+        <div class="middle">中间固定</div>
+        <div class="right">右侧自适应</div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    var scope = "global scope";
+    function checkscope() {
+      var scope2 = 'local scope';
+      return scope2;
+    }
+    checkscope();
+
+    // 分析函数执行上下文中作用域链和变量对象的创建过程：
+    
+    /*
+    一 文字描述
+
+      1.当一个函数创建的时候，就会预先创建一个作用域链（父级的作用域链）
+        保存在当前函数的【【scope】】属性中。
+      2.当函数开始执行的时候，会创建执行上下文（execution context），并且复制当前函数的scope属性
+        来创建属于自己的作用域链。
+      3.然后将与执行上下文对应的 活动对象创建 并且 推到作用域链的前端。 
+
+    二 通过伪代码的形式展示（以上述代码为例子）
+
+      1.当函数创建的时候，保存作用域链（父级）到 [[scope]]属性中
+      checkscope.[[scope]] = [globalContext.VO] 
+
+      2.当函数开始执行的时候，会创建checkscope函数的执行上下文，checkscope函数执行上下文
+        会被压入执行上下文栈中。
+      ECStack = [
+        checkscopeContext,
+        globalContext
+      ]
+
+      3.此时并不会立即开始执行函数，还需要做准备工作
+        第一步：
+        复制当前函数的[[scope]]属性来创建作用域链
+        checkscopeContext = {
+          scope:checkscope.[[scope]]
+        }
+
+        第二步：
+        用arguments 和形参，函数声明，变量声明 创建活动对象 ，随后初始化活动对象
+
+        checkscopeContext = {
+          AO: {
+            arguments:{
+              length:0
+            },
+            scope2:undefined
+          }
+        }
+
+        第三步：
+        将AO活动对象压入作用域的顶端
+        checkscopeContext = {
+          AO: {
+            arguments: {
+              length: 0
+            },
+            scope2:undefined
+          },
+          scope:[AO,[[scope]]]
+        }
+
+      4.准备工作完成之后开始执行代码，随着代码的执行修改AO中的属性值
+      checkscopeContext = {
+        AO: {
+          arguments:{
+            length:0
+          },
+          scope2:'local scope'
+        },
+        scope:[AO,[[scope]]]
+      }
+
+      5.返还scope2 ，代码执行结束，将checkscopeCotext弹出ECstack
+      ECstack.pop()
+      ECstack = [
+        globalContext
+      ]
+    
+    */
+
+
+  </script>
+</body>
+
+</html>
